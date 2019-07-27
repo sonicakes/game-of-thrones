@@ -6,11 +6,61 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
+class Toggle extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {isToggleOn: false,
+        //episodesDate : Results[0]._embedded.episodes
+    };
+    
+  
+      // This binding is necessary to make `this` work in the callback
+      this.reverse = this.reverse.bind(this);
+    }
+    reverse = () => {
+        console.log('clicked btn');
+        console.log(Results[0]._embedded.episodes);
+      
+        Results[0]._embedded.episodes.reverse();
 
+        // re-draw list of shows
+        Toggle.forceUpdate();
+        
+        this.setState({ 
+            isToggleOn: !this.state.isToggleOn,
+          //episodesDate: this.state.episodesDate.reverse()
+        });
+
+        //console.log(this.state.episodesDate);   
+    }
+  
+  
+    render() {
+      return (
+        <button onClick={this.reverse}>
+          {this.state.isToggleOn ? 'NEWEST' : 'OLDEST'}
+        </button>
+      );
+
+    }
+  }
+  
+
+  
 class Items extends Component {
+   
+ 
+     
+     
+
   render(){
+      //sorting posts by airdate from json. toggling ascending/descending order by reversing the default array order
+    
+
     return (
         <div className="App">
+        
+
 <Row className="py-3">
 
 
@@ -39,10 +89,9 @@ class Items extends Component {
             ))}
    
 </Row>
-
+<Toggle />
+ {/* the row below will display episode cards by order */}
         <Row>
-           
-    
      {Results[0]._embedded.episodes.map((item, key) => (
         <Col className="mb-3" xs="4">
             
@@ -67,7 +116,8 @@ class Items extends Component {
                    
 
        
-    ))}
+    )
+    )}
     
 
     </Row>
