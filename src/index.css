@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+  
+/* customizing button to match color on mockup. Color sourced using color-picker on the screen */
+  .btn-flat {
+    background-color: #214560;
+    color: white;
+  }
+
+  .btn-xxl {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+  }
+  
