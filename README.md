@@ -1,10 +1,10 @@
-#Game Of Thrones
+# Game Of Thrones
 
-##Intro
+## Intro
 
 This is the project I've undertaken as a part of an interview process. 
 
-##Instructions
+## Instructions
 To run the project, you have to have to have node installed on your computer. Clone the repository on your local computer and on CLI run `npm start`. It will start a local server and you can access the project. 
 
 *Author*: Sonia Parker
@@ -12,12 +12,13 @@ To run the project, you have to have to have node installed on your computer. Cl
 *Technology Used*: React (create-react-app to bootstrap the project), Bootstrap for design (react-bootstrap library).
 
 *Design*:
+[design]: https://github.com/sonicakes/game-of-thrones/blob/master/Design.jpg "Design Mockup"
 
 
 
 Instructions for the test:
 
-##Before:
+## Before:
 
 1. Using software you prefer (Trello, Word, PowerPoint), document the development
 tasks for the creation of web page ie Create episode card, Setup repository.
@@ -27,7 +28,7 @@ minutes.
 4. Share the document we us once you have finished.
 
 
-##During:
+## During:
 
 1. Create a new repository in GitHub, GitLab, or BitBucket.
 2. Use either VueJS or React to build the page.
@@ -38,7 +39,7 @@ page using the attached design.
 to setup the project.
 6. Share the Git repository we us once you have finished.
 
-##After:
+## After:
 
 1. What features would you like to build?
 2. What third-party services would you like to use?
@@ -48,7 +49,7 @@ to setup the project.
 ### Time
 no more than 8hrs
 
-###User stories:
+### User stories:
 
 1. As a user, I would like to be able to sort the episode results by the date in both
 ascending and descending order. By default, the episodes will display in ascending
