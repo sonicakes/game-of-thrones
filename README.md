@@ -58,5 +58,13 @@ order.
 2. As a user, I would like to be able to filter the episodes by the season they were
 released in. By default, all the episodes for all the seasons will be shown.
 
+### Implementation Note:
+
+I have episodes displaying on the screen dynamically. We can sort the episodes by oldest or newest. By default they are sorted by newest. Therefore, the first user story has been completed. My time has come to an end, so the second user story will be implemented at a later stage.
+
+Design is based on React Bootstrap library, which creates <Row> etc. components with className classes as in usual Bootstrap. Button on the intro element is being overwritten by custom CSS - color taken from the mock up.
+
+The main functionality is written in Items component, which is called in App.js
+
 
 
