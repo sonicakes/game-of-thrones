@@ -43,8 +43,17 @@ to setup the project.
 ## After:
 
 1. What features would you like to build?
+I'd like to finiish sorting method using the second user story. I would also make the site responsive, making use of react-bootstrap class names. I would add custom font and colors. I'd make sure the website is accessible as well. On top of that, I would use fade-in animation when episodes are loaded or switched between oldest and newest.
+
+
 2. What third-party services would you like to use?
+https://developers.themoviedb.org/3/tv/get-popular-tv-shows
+I'd use The MovieDB API to load information about other TV shows to potentially compare it to GoT.
+
 3. What technologies would you like to use?
+- Lo Dash library for writing javascript, allows you to shorten methods
+- Writing SASS for custom CSS
+- If we have more functionality related to changing state, Redux would be useful
 
 
 ### Time
