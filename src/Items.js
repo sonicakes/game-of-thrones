@@ -9,61 +9,52 @@ import Button from 'react-bootstrap/Button';
 class Toggle extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {isToggleOn: false,
-        //episodesDate : Results[0]._embedded.episodes
-    };
+      this.state = {isToggleOn: false};
     
-  
       // This binding is necessary to make `this` work in the callback
-      this.reverse = this.reverse.bind(this);
+      this.btnToggleClicked = this.btnToggleClicked.bind(this);
     }
-    reverse = () => {
-        console.log('clicked btn');
-        console.log(Results[0]._embedded.episodes);
-      
-        Results[0]._embedded.episodes.reverse();
 
-        // re-draw list of shows
-        Toggle.forceUpdate();
-        
+    btnToggleClicked = () => {
+
+        // Change the toggle state in Toggle class
+        // React will render the button again
         this.setState({ 
             isToggleOn: !this.state.isToggleOn,
-          //episodesDate: this.state.episodesDate.reverse()
         });
 
-        //console.log(this.state.episodesDate);   
+        // Call the method that was supplied when we create Toggle class
+        // This will reverse the state.episodes in Items class
+        this.props.methodToReverseEpisodes();
     }
-  
   
     render() {
       return (
-        <button onClick={this.reverse}>
+        <button onClick={this.btnToggleClicked}>
           {this.state.isToggleOn ? 'NEWEST' : 'OLDEST'}
         </button>
       );
 
     }
   }
-  
 
-  
 class Items extends Component {
-   
- 
-     
-     
+
+    state = { 
+        episodes: Results[0]._embedded.episodes
+    };
+
+    reverseEpisodes = () => {
+        const oldEpisodes = this.state['episodes'];
+        const newEpisodes = oldEpisodes.reverse();
+        this.setState({episodes: newEpisodes});
+    }
 
   render(){
       //sorting posts by airdate from json. toggling ascending/descending order by reversing the default array order
-    
-
     return (
         <div className="App">
-        
-
 <Row className="py-3">
-
-
 {Results.map((res) => (
 <Col xs="3">
     <Image fluid src={res.image.medium}>
@@ -89,14 +80,15 @@ class Items extends Component {
             ))}
    
 </Row>
-<Toggle />
+
+{/*Creating a Toggle class, tell it to reverse episodes by calling items.reverseEpisodes */}
+{/* We are in the Item class, so this = item */}
+<Toggle methodToReverseEpisodes={this.reverseEpisodes}/>
+
  {/* the row below will display episode cards by order */}
         <Row>
-     {Results[0]._embedded.episodes.map((item, key) => (
+     {this.state.episodes.map((item, key) => (
         <Col className="mb-3" xs="4">
-            
-            
-
         <Card  key={key}>
     <Card.Img variant="top" src={item.image.medium} />
     <Card.Body>
@@ -113,21 +105,11 @@ class Items extends Component {
     </Card.Footer>
   </Card>
   </Col>
-                   
-
-       
     )
     )}
-    
-
-    </Row>
- 
-         
+    </Row> 
     </div>
-    
     )
-    
-  
   }
 }
 
