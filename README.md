@@ -12,7 +12,8 @@ To run the project, you have to have to have node installed on your computer. Cl
 *Technology Used*: React (create-react-app to bootstrap the project), Bootstrap for design (react-bootstrap library).
 
 *Design*:
-[design]: https://github.com/sonicakes/game-of-thrones/blob/master/Design.jpg "Design Mockup"
+![design]: (https://github.com/sonicakes/game-of-thrones/blob/master/Design.jpg "Design Mockup")
+
 
 
 
